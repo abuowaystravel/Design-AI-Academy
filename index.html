@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Design AI Academy</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f6fa;
+    color: #171827;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #171827, #3738a5);
+    color: white;
+    padding: 35px 20px;
+    border-radius: 0 0 30px 30px;
+}
+
+.header-content {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #e1e2ee;
+    font-size: 16px;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Welcome */
+.welcome {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    margin-top: -10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.welcome h2 {
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Buttons */
+.btn {
+    border: none;
+    background: #5b5ce2;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Sections */
+.section-title {
+    margin: 30px 0 15px;
+    font-size: 24px;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 18px;
+    border: 1px solid #e8e8ee;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card-icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Challenge */
+.challenge {
+    background: #fff8e5;
+    border: 1px solid #f1d98b;
+    padding: 22px;
+    border-radius: 18px;
+    margin-top: 25px;
+}
+
+.challenge h3 {
+    margin-bottom: 10px;
+}
+
+#challengeText {
+    line-height: 1.8;
+}
+
+/* AI */
+.ai-box {
+    background: #171827;
+    color: white;
+    padding: 25px;
+    border-radius: 20px;
+    margin-top: 25px;
+}
+
+.ai-box p {
+    color: #d9d9e5;
+    line-height: 1.8;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    color: #777;
+    margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-content">
+        <div class="logo">🎨 Design AI Academy</div>
+
+        <p>
+            تعلم التصميم، اكتشف أفكاراً جديدة،
+            وطوّر مهاراتك باستخدام الذكاء الاصطناعي.
+        </p>
+    </div>
+</header>
+
+
+<div class="container">
+
+    <!-- Welcome -->
+    <section class="welcome">
+
+        <h2>👋 أهلاً بك في أكاديمية التصميم</h2>
+
+        <p>
+            منصة تعليمية تساعدك على تعلم التصميم الجرافيكي
+            من البداية إلى المستوى المتقدم من خلال الدروس،
+            التحديات، والأفكار الإبداعية.
+        </p>
+
+        <button class="btn" onclick="startChallenge()">
+            🚀 ابدأ تحدي اليوم
+        </button>
+
+    </section>
+
+
+    <!-- Main Sections -->
+
+    <h2 class="section-title">📚 ماذا تريد أن تتعلم؟</h2>
+
+    <section class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">📚</div>
+
+            <h3>تعلم التصميم</h3>
+
+            <p>
+                تعلم أساسيات التصميم الجرافيكي
+                والتعامل مع Photoshop وIllustrator وInDesign.
+            </p>
+
+            <button class="btn" onclick="showMessage('قسم الدروس قادم قريباً 🚀')">
+                استكشف
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">💡</div>
+
+            <h3>أفكار التصميم</h3>
+
+            <p>
+                احصل على أفكار لمشاريع تصميم حقيقية
+                تساعدك على بناء Portfolio قوي.
+            </p>
+
+            <button class="btn" onclick="generateIdea()">
+                💡 احصل على فكرة
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🤖</div>
+
+            <h3>AI Mentor</h3>
+
+            <p>
+                مساعد ذكي يساعدك على تطوير أفكارك
+                وفهم مبادئ التصميم.
+            </p>
+
+            <button class="btn" onclick="showMessage('AI Mentor سيتم ربطه بالذكاء الاصطناعي لاحقاً 🤖')">
+                جرب
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🔍</div>
+
+            <h3>تحليل التصميم</h3>
+
+            <p>
+                ارفع تصميمك واحصل على ملاحظات حول
+                الألوان والخطوط والتكوين.
+            </p>
+
+            <button class="btn" onclick="showMessage('ميزة تحليل التصميم بالذكاء الاصطناعي قادمة 🔥')">
+                تحليل
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Challenge -->
+
+    <section class="challenge">
+
+        <h3>🏆 تحدي التصميم اليوم</h3>
+
+        <p id="challengeText">
+            اضغط على "ابدأ تحدي اليوم" للحصول على مهمة تصميم.
+        </p>
+
+    </section>
+
+
+    <!-- AI Section -->
+
+    <section class="ai-box">
+
+        <h2>🤖 Design AI Mentor</h2>
+
+        <p>
+            في الإصدارات القادمة سيكون لديك مساعد ذكاء اصطناعي
+            تستطيع أن تسأله عن التصميم والألوان والخطوط
+            والأفكار والمشاريع.
+        </p>
+
+        <button class="btn" onclick="showMessage('سيتم تفعيل AI Mentor في الإصدار القادم 🚀')">
+            تحدث مع AI
+        </button>
+
+    </section>
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 Design AI Academy
+    </p>
+
+    <p>
+        Learn • Create • Improve 🎨
+    </p>
+
+</footer>
+
+
+<script>
+
+/* Design Ideas */
+
+const ideas = [
+
+    "صمم بوستر لمطعم سوداني بطابع عصري.",
+
+    "صمم هوية بصرية لمقهى جديد.",
+
+    "صمم إعلاناً لمنتج تقني.",
+
+    "صمم منشور Instagram لمصمم جرافيك.",
+
+    "صمم شعار لشركة Cybersecurity.",
+
+    "صمم بطاقة عمل لمصور محترف.",
+
+    "صمم بوستر لحفل موسيقي.",
+
+    "صمم غلاف لكتاب عن الذكاء الاصطناعي.",
+
+    "صمم إعلاناً لشركة سفر وسياحة.",
+
+    "صمم منشوراً تعليمياً عن ألوان التصميم."
+
+];
+
+
+/* Generate Idea */
+
+function generateIdea() {
+
+    const randomIndex =
+        Math.floor(Math.random() * ideas.length);
+
+    const idea = ideas[randomIndex];
+
+    alert(
+        "💡 فكرة التصميم:\n\n" +
+        idea +
+        "\n\n🔥 حاول تنفيذها في Photoshop أو Illustrator."
+    );
+
+}
+
+
+/* Challenge */
+
+function startChallenge() {
+
+    const challenges = [
+
+        "صمم بوستر لمطعم خلال 30 دقيقة.",
+
+        "صمم شعار باستخدام لونين فقط.",
+
+        "صمم منشور Instagram لموضوع تقني.",
+
+        "صمم بطاقة عمل لشركة ناشئة.",
+
+        "صمم إعلاناً لمنتج من اختيارك."
+
+    ];
+
+    const random =
+        Math.floor(Math.random() * challenges.length);
+
+    document.getElementById("challengeText").innerText =
+        "🔥 مهمتك اليوم: " +
+        challenges[random] +
+        " حدد الجمهور والألوان والخطوط قبل أن تبدأ.";
+
+}
+
+
+/* Messages
